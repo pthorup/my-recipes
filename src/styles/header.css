@@ -1,0 +1,14 @@
+header {
+  background-color: #000000;
+  overflow: auto;
+}
+
+header h1 {
+  margin: 1%;
+  float: left;
+  color: #04B4AE;
+}
+header h1:hover {
+  transition: 1s;
+  color: #5816b2;
+}

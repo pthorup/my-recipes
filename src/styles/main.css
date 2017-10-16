@@ -1,0 +1,27 @@
+body {
+  background-color: #232323;
+  color: #cccccc;
+}
+
+.container {
+  border: 7px dotted #04B4AE;
+  width: 700px;
+  margin: auto;
+  margin-top: 70px;
+  padding: 30px;
+}
+
+.message {
+  color: #ec2a94; /* Pink */
+}
+/* All buttons */
+.btn {
+  float: right;
+  margin: 1.2% !important;
+  background-color: #04B4AE;
+  border: none;
+}
+.btn:hover {
+  transition: 1s;
+  background-color: #5816b2;
+}

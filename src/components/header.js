@@ -1,0 +1,18 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/header.css';
+
+const Header = () => {
+  return (
+    <header>
+      <Link to="/">
+        <h1>My Recipes</h1>
+      </Link>
+      <Link to="/add-recipe" className="btn btn-primary">
+        Add Recipe
+      </Link>
+    </header>
+  );
+}
+
+export default Header;
