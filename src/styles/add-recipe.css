@@ -5,3 +5,8 @@
 .add-recipe-page label {
   color: #04B4AE; /* Teal */
 }
+
+
+.add-recipe-page small {
+  color: #ee3c62; /* Red */
+}

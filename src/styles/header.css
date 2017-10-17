@@ -10,5 +10,5 @@ header h1 {
 }
 header h1:hover {
   transition: 1s;
-  color: #5816b2;
+  color: #5816b2; /* Purple*/
 }

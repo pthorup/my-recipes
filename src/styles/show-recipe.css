@@ -5,3 +5,10 @@
 .show-recipe-page h4 {
   color: #04B4AE; /* Teal */
 }
+
+.show-recipe-page .ingredientList {
+  list-style: circle;
+}
+.show-recipe-page .directionList {
+  list-style: decimal;
+}

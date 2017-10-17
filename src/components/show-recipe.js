@@ -39,7 +39,10 @@ class ShowRecipe extends Component {
     //Split directions/ingredients into a list
     if(content !== ''){
       return content.map((data, index) => {
-        if(data){
+        // Trim the spaces. If user only has blank spaces then <li> tags will not render.
+        let dataTrimed = data.replace(/^\s+/, '').replace(/\s+$/, '');
+
+        if(dataTrimed){
           return <li key={index}>{data}</li>;
           }
           return '';
