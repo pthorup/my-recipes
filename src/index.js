@@ -14,10 +14,10 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Header />
-      <Route path="/" exact component={RecipeList} />
-      <Route path="/add-recipe" component={AddRecipe} />
-      <Route path="/edit-recipes/:id" component={AddRecipe} />
-      <Route path="/recipes/:id" component={ShowRecipe} />
+      <Route path="/my-recipes/" exact component={RecipeList} />
+      <Route path="/my-recipes/add-recipe" component={AddRecipe} />
+      <Route path="/my-recipes/edit-recipes/:id" component={AddRecipe} />
+      <Route path="/my-recipes/recipes/:id" component={ShowRecipe} />
       <Footer />
   </div>
 </BrowserRouter>
