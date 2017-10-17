@@ -90,7 +90,7 @@ class ShowRecipe extends Component {
           onClick={() => this.onDeleteRecipe()}
           >Delete Recipe
         </button>
-        <Link to={`/edit-recipes/${this.props.match.params.id}`} className="btn btn-primary">Edit Recipe</Link>
+        <Link to={`/my-recipes/edit-recipes/${this.props.match.params.id}`} className="btn btn-primary">Edit Recipe</Link>
       </div>
     );
   }
