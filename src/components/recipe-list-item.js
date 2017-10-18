@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RecipeListItem = ({recipe}) => {
-  console.log(recipe.id);
   return (
     <Link to={`/my-recipes/recipes/${recipe.id}`}  key={recipe.id}>
       <li value={recipe.id}>

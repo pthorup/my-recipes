@@ -10,11 +10,16 @@ const RecipeList = () => {
 
 
   if(recipes === null || !Object.keys(recipes).length){
-     recipeList.push(<p>No recipe found.</p>);
+     recipeList.push(<p key={1}>No recipe found.</p>);
   } else {
     // Loop through the recipe object
-    for (const key of Object.keys(recipes)) {
-      recipeList.push(<RecipeListItem key = {recipes[key].id} recipe = {recipes[key]} />);
+    // for (const key of Object.keys(recipes)) {
+    //   recipeList.push(<RecipeListItem key = {recipes[key].id} recipe = {recipes[key]} />);
+    // }
+    let allKeys = Object.keys(recipes);
+
+    for(let i=0; i<allKeys.length ; i++){
+       recipeList.push(<RecipeListItem key = {recipes[allKeys[i]].id} recipe = {recipes[allKeys[i]]} />);
     }
   }
 

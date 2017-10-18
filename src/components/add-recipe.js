@@ -8,33 +8,41 @@ class AddRecipe extends Component {
     // Get from localStorage
     let recipes = JSON.parse(localStorage.getItem("recipes"));
 
-    if( !recipes  || !this.props.match.params.id ){ // Edit recipe
-      this.state = {
-        title: "",
-        ingredients: "",
-        directions: "",
-        recipeSaved: false
-      };
-      // No recipes stored
-      recipes=== null ? this.state = { recipes: null } : this.state = { recipes: recipes };
-
-    } else {
+    if(this.props.match.params.id ){ // Edit recipe
 
       let ingredients = recipes[this.props.match.params.id].ingredients;
       let directions = recipes[this.props.match.params.id].directions;
+      let title = recipes[this.props.match.params.id].title;
 
       this.state = {
         recipes : recipes,
-        title : recipes[this.props.match.params.id].title,
+        title : title,
         ingredients : ingredients,
         directions : directions,
         recipeId: this.props.match.params.id,
         recipeSaved: false
       };
+
+    } else if(!recipes) {
+      this.state = {
+        recipes : recipes,
+        title: '',
+        ingredients: '',
+        directions: '',
+        recipeSaved: false
+      };
+    } else {
+      // No recipes stored or editing existing recipes
+      this.state = {
+        recipes : recipes,
+        title: '',
+        ingredients: '',
+        directions: '',
+        recipeSaved: false
+      };
     }
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-
   }
 
   onInputChange(e) {
@@ -108,7 +116,7 @@ class AddRecipe extends Component {
               value={this.state.ingredients}
               onChange={this.onInputChange}
             />
-          <small id="emailHelp" class="form-text text-muted">Separate your ingredients with a fullstop.</small>
+          <small id="emailHelp" className="form-text text-muted">Separate your ingredients with a fullstop.</small>
           </div>
           <div className="form-group">
             <label> Directions:</label>
@@ -120,7 +128,7 @@ class AddRecipe extends Component {
                 value={this.state.directions}
                 onChange={this.onInputChange}
               />
-            <small id="emailHelp" class="form-text text-muted">Separate your directions with a fullstop.</small>
+            <small id="emailHelp" className="form-text text-muted">Separate your directions with a fullstop.</small>
           </div>
           <input type="submit" value="Save Recipe" className="btn btn-primary"/>
           {
